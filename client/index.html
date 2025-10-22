@@ -1,1 +1,46 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Chat Mkfy</title><script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script><style>body{font-family:Arial,sans-serif;padding:20px;background:#f9f9f9}ul{list-style:none;padding:0;max-width:600px;margin:0 auto}li{margin:10px 0;padding:12px;background:white;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1)}form{display:flex;gap:10px;max-width:600px;margin:20px auto}input{flex-grow:1;padding:10px;border:1px solid #ccc;border-radius:5px;font-size:16px}button{padding:10px 20px;background:#007bff;color:white;border:none;border-radius:5px;cursor:pointer;font-size:16px}button:hover{background:#0056b3}h1{text-align:center;color:#333}</style></head><body><h1>Mkfy Chat</h1><ul id="messages"></ul><form id="form" action=""><input id="input" autocomplete="off" placeholder="Digite sua mensagem..." /><button>Enviar</button></form><script src="client.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mkfy Chat - Mundo Virtual</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Mkfy Chat</h1>
+            <button id="toggleRooms">Salas</button>
+            <button id="toggleAvatar">Avatar</button>
+        </header>
+        <div id="avatarPanel" class="panel hidden">
+            <h2>Seu Avatar</h2>
+            <select id="bodyType">
+                <option value="slim">Slim</option>
+                <option value="curvy">Curvy</option>
+            </select>
+            <select id="outfit">
+                <option value="casual">Casual</option>
+                <option value="formal">Formal</option>
+            </select>
+            <button id="saveAvatar">Salvar</button>
+        </div>
+        <div id="roomsPanel" class="panel hidden">
+            <h2>Salas</h2>
+            <select id="roomSelect">
+                <option value="lobby">Lobby</option>
+                <option value="private">Quarto Privado</option>
+            </select>
+            <button id="joinRoom">Entrar</button>
+        </div>
+        <ul id="usersList"></ul>
+        <ul id="messages"></ul>
+        <form id="form">
+            <input id="input" autocomplete="off" placeholder="Mensagem (use /private @user msg para privado)" />
+            <button>Enviar</button>
+        </form>
+    </div>
+    <script src="client.js"></script>
+</body>
+</html>
