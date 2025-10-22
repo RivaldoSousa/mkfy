@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mkfy Chat - Mundo Virtual</title>
+    <title>Mkfy Chat - Conversação</title>
     <script src="/socket.io/socket.io.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,16 +13,19 @@
             <h1>Mkfy Chat</h1>
             <button id="toggleRooms">Salas</button>
             <button id="toggleAvatar">Avatar</button>
+            <button id="toggleEmoji">😊</button>
         </header>
         <div id="avatarPanel" class="panel hidden">
             <h2>Seu Avatar</h2>
             <select id="bodyType">
                 <option value="slim">Slim</option>
                 <option value="curvy">Curvy</option>
+                <option value="athletic">Athletic</option>
             </select>
             <select id="outfit">
                 <option value="casual">Casual</option>
                 <option value="formal">Formal</option>
+                <option value="sporty">Sporty</option>
             </select>
             <button id="saveAvatar">Salvar</button>
         </div>
@@ -31,8 +34,13 @@
             <select id="roomSelect">
                 <option value="lobby">Lobby</option>
                 <option value="private">Quarto Privado</option>
+                <option value="gaming">Sala de Jogos</option>
             </select>
             <button id="joinRoom">Entrar</button>
+        </div>
+        <div id="emojiPanel" class="panel hidden">
+            <h2>Escolha um Emoji</h2>
+            <div id="emojiList"></div>
         </div>
         <ul id="usersList"></ul>
         <ul id="messages"></ul>
